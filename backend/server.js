@@ -5,11 +5,18 @@ import cookieParser from "cookie-parser";
 import userRoutes from "./routes/userRoutes.js";
 import postRoutes from "./routes/postRoutes.js";
 import { v2 as cloudinary } from "cloudinary";
+import cors from "cors";
 
 dotenv.config();
 
 connectDB();
 const app = express();
+app.use(
+  cors({
+    origin: "https://social-media-app-mern-app-frontend.onrender.com", // Frontend URL
+    credentials: true,
+  })
+);
 
 const PORT = process.env.PORT || 5000;
 
