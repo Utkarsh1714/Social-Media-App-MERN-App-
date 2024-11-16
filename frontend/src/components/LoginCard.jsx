@@ -37,7 +37,7 @@ const LoginCard = () => {
   const handleLogin = async () => {
     setLoading(true);
     try {
-      const res = await fetch("/api/users/login", {
+      const res = await fetch("api/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
